@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <!-- inyeccion por setter usando el namespace xmlns:p -->
+    <bean id="mybean"
+          class="carmelo.spring.xml.MyBean"
+          p:valor="25" p:mensaje="Este es un mensaje..." />
+    
+    <!-- inyeccion por setter usando el atributo <property> -->
+    <bean id="mybean_1" class="carmelo.spring.xml.MyBean">
+        
+        <!-- establecer una cadena vacia -->
+        <property name="mensaje" value=""></property>
+        
+        <!-- establecer un valor nullo -->
+        <property name="valor" >
+            <null/>
+        </property>
+        
+    </bean>
+    
+    <bean id="mybean_2"
+          class="carmelo.spring.xml.MyBean"
+          p:valor="35" p:mensaje="" />
+
+    <!-- referenciar a otro bean -->
+    <bean id="otherbean" class="carmelo.spring.xml.OtherBean">
+        <!-- inyectar por constructor -->
+        <!-- <constructor-arg ref="mybean" /> -->
+        
+        <!-- inyectar por setter -->
+        <property name="myBean" ref="mybean"/>
+    </bean>
+
+    <!-- inyeccion de coleciones java -->
+    <bean id="listbean" class="carmelo.spring.xml.ListBean">  
+        
+        <!-- agregar elementos a un java.util.List -->  
+        <property name="items">
+            <list>
+                <value>primer  item</value>
+                <value>segundo item</value>
+                <value>tercer  item</value>
+            </list>
+        </property>
+        
+        <!-- agregar elementos a un java.util.Set -->  
+        <!-- esta es una collecion de beans -->
+        <property name="beanItems">
+            <set>
+                <ref bean="mybean_1"/>
+                <ref bean="mybean_2"/>
+            </set>
+        </property>
+        
+    </bean>
+    
+    <!-- agregar bean internos -->
+    <bean id="innerbean" class="carmelo.spring.xml.OtherBean">
+        <property name="myBean">
+            <bean class="carmelo.spring.xml.MyBean"
+                  p:valor="10101" p:mensaje="InnerBean..." />
+        </property>
+    </bean>
+    
+    <!-- 
+    <bean id="mybean" class="carmelo.spring.xml.MyBean">
+        <constructor-arg value="125" type="java.lang.Integer" />
+        <constructor-arg value="Un Mensaje" type="java.lang.String" />
+    </bean>
+    -->
+    
+</beans>
+
