@@ -1,0 +1,19 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+    <!-- <context:component-scan base-package="carmelo.spring.introduccion"/> -->
+    
+    <bean id="saludaService" 
+          init-method="initHello"
+          destroy-method="destroyHello"
+          class="carmelo.spring.introduccion.HelloServiceImpl"/>
+    
+    <bean id="one"
+          class="carmelo.spring.introduccion.ClientService" 
+          factory-method="createInstance"/>
+     
+</beans>
