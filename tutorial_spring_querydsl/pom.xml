@@ -44,8 +44,8 @@
         <dependency>     
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-           <!--  <version>1.11.1.RELEASE</version> -->
-            <version>1.9.2.RELEASE</version>
+            <version>1.11.1.RELEASE</version>
+            <!-- <version>1.9.2.RELEASE</version> -->
         </dependency>
      
         
@@ -57,7 +57,7 @@
         
         
         <!-- bucar ultima version -->
-        <!--
+        <!--  -->
         <dependency>
             <groupId>com.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
@@ -70,9 +70,10 @@
             <artifactId>querydsl-jpa</artifactId>
             <version>${querydsl.version}</version>
         </dependency>
-        -->
+      
         
         <!-- Query DSL integration -->
+        <!--
         <dependency>
             <groupId>com.mysema.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
@@ -83,6 +84,7 @@
             <artifactId>querydsl-jpa</artifactId>
             <version>3.7.1</version>
         </dependency>
+        -->
         
     </dependencies>
     
@@ -90,7 +92,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <querydsl.version>3.7.1</querydsl.version>
+        <querydsl.version>4.1.4</querydsl.version>
     </properties>
 
     <build>
@@ -106,8 +108,8 @@
                         </goals>
                         <configuration>
                             <outputDirectory>target/generated-sources/java</outputDirectory>
-                            <!-- <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor> -->
-                            <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+                            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                            <!-- <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor> -->
                         </configuration>
                     </execution>
                 </executions>

@@ -2,8 +2,8 @@ package carmelo.spring.data;
 
 import carmelo.spring.data.model.QProduct;
 import carmelo.spring.data.repository.ProductRepository;
-import com.mysema.query.types.Predicate;
-import com.mysema.query.types.expr.BooleanExpression;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import java.sql.SQLException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
