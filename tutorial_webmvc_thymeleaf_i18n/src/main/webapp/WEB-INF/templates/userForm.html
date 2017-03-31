@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tutorial Thymeleaf</title>
+        <meta charset="UTF-8">
+
+        <style type="text/css">
+            .errorfield { 
+                color: #ae1d1d; 
+                font-style: italic;
+                font-weight: bold;
+                border: 1px solid #ff0000;
+            }
+
+            .errorblock{
+                color: #000;
+                background-color: #ffEEEE;
+                border: 1px solid #ff0000;
+                padding: 8px;
+                margin: 16px;
+                font-style: italic;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h2>Registro de usuarios:</h2>
+
+        <div style="padding: 10px; border: 1px solid gray;">
+            <a href="?lang=es">Spanish</a>
+            <a href="?lang=en">English</a>
+        </div>
+
+        <form th:action="@{/user/create}" th:object="${usuario}" method="post">
+
+            <div class="errorblock" th:if="${#fields.hasErrors('*')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('*')}"
+                        th:text="${err}">Input is incorrect</li>
+                </ul>
+            </div>
+
+            <fieldset>
+                <legend>Datos del usuario</legend>
+                <table>
+                    <tr>
+                        <td><label th:text="#{form.user.nombre}">Nombre: </label></td>
+                        <td><input type="text" th:field="*{nombre}" th:errorclass="errorfield"/></td>
+                    </tr>
+                    <tr>
+                        <td><label th:text="#{form.user.apellido}">Apellido: </label></td>
+                        <td><input type="text" th:field="*{apellido}" th:errorclass="errorfield"/></td>
+                    </tr>
+                    <tr>
+                        <td><label th:text="#{form.user.correo}">Correo: </label></td>
+                        <td><input type="text" th:field="*{correo}" th:errorclass="errorfield"/></td>
+                    </tr>
+                    <tr>
+                        <td><label th:text="#{form.user.pass}">Password: </label></td>
+                        <td><input type="password" th:field="*{password}" th:errorclass="errorfield"/></td>
+                    </tr>
+                    <tr>
+                        <td><label th:text="#{form.user.edad}">Edad: </label></td>
+                        <td><input type="number" th:field="*{edad}" th:errorclass="errorfield"/></td>
+                    </tr>
+                    <tr>
+                        <td><label th:text="#{form.user.sexo}">Sexo: </label></td>
+                        <td><input type="checkbox" th:field="*{sexo}"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" th:text="#{form.user.boton}"></button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </body>
+</html>
