@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Spring Thymeleaf</title>
+    </head>
+    <body>
+
+        <p th:text="#{mensaje.fecha} + ${fecha}" />
+
+        <table border="1">
+            <tr th:each="user: ${usuarios}">
+                <td th:text="${user.nombre}" />
+                <td th:text="${user.apellido}" />
+                <td th:text="${user.correo}" />
+           
+                <td>
+                    <span th:if="${user.sexo}" th:text="Hombre"></span>
+                    <span th:unless="${user.sexo}" th:text="Mujer"></span>
+                </td>
+              
+                <td th:switch="${user.tipo.toString()}">
+                    <span th:case="'Administrador'" th:text="ADM" />
+                    <span th:case="'Estandar'" th:text="STD" />
+                    <span th:case="'Anonimo'" th:text="ANM" />
+                </td>
+
+            </tr>
+        </table>
+
+    </body>
+</html>
