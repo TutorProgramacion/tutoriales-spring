@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2017-04-03T15:46:11 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b2dd446-c3eb-4330-b2e4-63a3fed7ee69">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IkNVU1RPTUVSIiBBUyAsMTEsMTgsM2RlMGFiYzEtYmE4Ny00ZTI2LTg1NjgtMzAxNjRiNTg5MzFhOw=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="row_style" vTextAlign="Middle" fontName="SansSerif">
+		<pen lineWidth="1.0" lineColor="#8A8888"/>
+		<box padding="3">
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0"/>
+			<bottomPen lineWidth="1.0"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<style name="header_style" mode="Opaque" forecolor="#FFFFFF" backcolor="#828282" hTextAlign="Center" vTextAlign="Middle" isBold="true">
+		<box>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#424242"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#424242"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#424242"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#424242"/>
+		</box>
+	</style>
+	<parameter name="AUTOR" class="java.lang.String">
+		<parameterDescription><![CDATA[Nombre del autor]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="FIRSTNAME" class="java.lang.String"/>
+	<field name="LASTNAME" class="java.lang.String"/>
+	<field name="STREET" class="java.lang.String"/>
+	<field name="CITY" class="java.lang.String"/>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="d62d2ce5-404a-489b-9c1e-5b445fcdcf16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Sans" size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Spring MVC con JasperReport]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="db72626d-4ac3-41aa-afc8-2e9cb8b6e766"/>
+				<box padding="3" rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lucida Sans" size="16"/>
+				</textElement>
+				<text><![CDATA[Autor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="0" width="455" height="30" uuid="b7b7b138-e751-4774-a28d-1d7c89856050"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Lucida Sans" size="12" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AUTOR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="header_style" x="0" y="0" width="111" height="20" uuid="d32e3c5c-0d2a-4a8f-bfb2-9c1c88fa93a7"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header_style" x="111" y="0" width="111" height="20" uuid="7a3d2e24-2974-4325-9969-295ab8204af4"/>
+				<text><![CDATA[FIRSTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header_style" x="222" y="0" width="111" height="20" uuid="7664c499-8b6c-4b15-948e-f884c27783cc"/>
+				<text><![CDATA[LASTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header_style" x="333" y="0" width="111" height="20" uuid="27226380-d123-4b59-afab-3ffe12375d0b"/>
+				<text><![CDATA[STREET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="header_style" x="444" y="0" width="111" height="20" uuid="9c62787e-f1bd-455c-9101-72f277452069"/>
+				<text><![CDATA[CITY]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement style="row_style" x="0" y="0" width="111" height="30" uuid="76a23bc4-4f9f-44d9-be5b-afc259bf0e51"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="row_style" x="111" y="0" width="111" height="30" uuid="431a2f70-bc79-41c2-9140-186f60144468"/>
+				<textFieldExpression><![CDATA[$F{FIRSTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="row_style" x="222" y="0" width="111" height="30" uuid="c4cc2303-47ff-4e6c-ad9c-cb2b22b2d763"/>
+				<textFieldExpression><![CDATA[$F{LASTNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="row_style" x="333" y="0" width="111" height="30" uuid="fe6fc2e6-5b11-4cb0-96e0-874c6cbc5656"/>
+				<textFieldExpression><![CDATA[$F{STREET}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="row_style" x="444" y="0" width="111" height="30" uuid="b7a1ba71-8aea-49a0-9a72-87a6bf3eb69e"/>
+				<textFieldExpression><![CDATA[$F{CITY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
