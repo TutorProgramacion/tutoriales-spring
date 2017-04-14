@@ -1,0 +1,10 @@
+.title {
+    color: darkgreen;
+    font-family: sans-serif;
+    display: block;
+}
+
+img {
+    width: 400px;
+    height: auto;
+}
