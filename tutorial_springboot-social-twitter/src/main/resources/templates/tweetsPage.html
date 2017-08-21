@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Twitter</title>
+        <style type="text/css">
+            .tweet-container {
+                border: gray solid 1px;
+                border-radius: 3px;
+                margin: 20px 10px;
+                padding: 10px;
+                box-shadow: #c3c3c3 2px 2px 5px 0px;
+            }
+
+            body { font-family: Roboto; }
+
+        </style>
+    </head>
+    <body>
+        
+        <h3>Hola, <span th:text="${profile.name}">Usuario</span></h3>
+
+        <h4>Tweets List</h4>
+        
+        <ul>
+            <li th:each="tweet : ${tweets}" style="list-style: none;">
+                <div class="tweet-container">
+                    <img th:src="${tweet.user.profileImageUrl}" style="display: block; margin-bottom: 10px;"/>
+                    <span th:text="${tweet.user.name}">Username</span>
+                    <p th:text="${tweet.text}">Tweet</p>
+                </div>
+            </li>
+        </ul>
+        
+    </body>
+</html>
