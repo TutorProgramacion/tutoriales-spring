@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Social Facebook</title>
+        <style>
+            body { font-family: Roboto Light; }
+            
+            .feed-container 
+            {
+                border: gray solid 1px;
+                border-radius: 5px;
+                margin: 30px 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>Hola, <span th:text="${perfil.name}">usuario</span> !</h3>
+
+        <h4>Estas son tus publicaciones:</h4>
+
+        <div th:each="post:${feed}" class="feed-container">
+            <b th:text="${post.from.name}">autor</b> publicó:
+            <p th:text="${post.message}">mensaje</p>
+            <img th:if="${post.picture}" th:src="${post.picture}"/>
+        </div>
+
+    </body>
+</html>
